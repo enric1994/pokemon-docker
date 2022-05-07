@@ -1,0 +1,15 @@
+version: '2.3'
+
+services:
+
+  main:
+    image: main
+    container_name: main
+    working_dir: /main
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../:/main
+    runtime: nvidia
+    command: tail /dev/null -f
